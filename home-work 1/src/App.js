@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <UserList usersObj={this.state.users} />
+        <UserList usersArr={this.state.users} />
       </div>
     )
   }

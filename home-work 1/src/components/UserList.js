@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
-import UserListInfo from './UserListInfo'
+import UserListItem from './UserListItem'
 
 class UserList extends Component {
     render() {
-        const { usersObj } = this.props;
+        const { usersArr } = this.props;
         return (
-            <React.Fragment>
                 <table>
                     <tbody>
                         <tr>
@@ -14,12 +13,11 @@ class UserList extends Component {
                             <th>Age</th>
                             <th>Tel</th>
                         </tr>
-                        {usersObj.map( user => (
-                            <UserListInfo key={user.id} user={user} />
+                        {usersArr.map( user => (
+                            <UserListItem key={user.id} user={user} />
                         ))}
                     </tbody>
                 </table>
-            </React.Fragment>
         )
     }
 }

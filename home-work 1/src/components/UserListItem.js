@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class UserListInfo extends Component {
+class UserListItem extends Component {
     render() {
         const { user } = this.props;
         return (
@@ -14,4 +14,4 @@ class UserListInfo extends Component {
     }
 }
 
-export default UserListInfo
+export default UserListItem
