@@ -17,22 +17,25 @@ class App extends Component{
         surname: 'Ivanovich'
       }
     ],
-    activeUser: ['none']
+    activeUser: ['none'],
+    formDisplay: 'block'
   }
   onAddContactClick = () => {
-    // hide delete button
-    this.hideElement(document.getElementById('delete'));
-    this.showElement(document.getElementsByTagName('form')[0]);
+    this.changeFormState('block');
+    // не очищается форма . Сделать очищение формы без затрагивания ДОМ элементов
+    // this.setState({
+    //   activeUser: [{
+    //     name: '',
+    //     surname: ''
+    //   }]
+    // })
+    console.log(this.state.activeUser)
+    // this.resetInput();
+  }
+  changeFormState(state) {
     this.setState({
-      activeUser: ['none']
+      formDisplay: state
     })
-    this.resetInput();
-  }
-  showElement(element) {
-    element.style.display = 'block';
-  }
-  hideElement(element) {
-    element.style.display = 'none';
   }
   onDeleteBttnClick = (e) => {
     e.preventDefault();
@@ -41,24 +44,24 @@ class App extends Component{
     this.setState({
       contacts: newArr
     })
-    this.hideElement(document.getElementsByTagName('form')[0]);
+    this.changeFormState('none');
   }
   deleteElement(newArr) {
     let index = this.findElementByIndex(this.state.activeUser);
     newArr.pop(newArr[index])
   }
-  onSaveBttnClick = (e) => {
+  onSaveBttnClick = (name,surname,e) => {
     e.preventDefault();
+    name = name == '' ? this.state.activeUser.name : name;
+    surname = surname == '' ? this.state.activeUser.surname : surname;
     // if activeUser variable is none then we create new user
     // else we change info on activeUser variable and set it to state
     this.state.activeUser == 'none' ? 
-                          this.addNewUser()
-                          : this.changeContactInfo();
-    this.hideElement(document.getElementsByTagName('form')[0]);
+                          this.addNewUser(name,surname)
+                          : this.changeContactInfo(name,surname);
+    this.changeFormState('none');
   }
-  addNewUser() {
-    let inputName = document.getElementById('name');
-    let inputSurname = document.getElementById('surname');
+  addNewUser(inputName, inputSurname) {
     this.setState({
       contacts: [...this.state.contacts,
                 this.newUserInfo(inputName, inputSurname)]
@@ -67,20 +70,18 @@ class App extends Component{
   newUserInfo(inputName, inputSurname) {
     return {
       id: Date.now(), 
-      name: inputName.value,
-      surname: inputSurname.value
+      name: inputName,
+      surname: inputSurname
     } 
   }
-  changeContactInfo() {
+  changeContactInfo(contactName,contactSurname) {
     let newArr = this.state.contacts;
-    this.setNewChanges(newArr);
+    this.setNewChanges(newArr,contactName,contactSurname);
     this.setState({
       contacts: newArr
     })
   }
-  setNewChanges(newArr) {
-    let contactName = document.getElementById('name').value;
-    let contactSurname = document.getElementById('surname').value;
+  setNewChanges(newArr,contactName,contactSurname) {
     let index = this.findElementByIndex(this.state.activeUser);
     newArr[index] = {
       id:newArr[index].id,
@@ -96,11 +97,10 @@ class App extends Component{
     document.getElementById('surname').value = ''
   }
   onUserClick = (e) => {
-    this.resetInput();
+    // this.resetInput();
     if(e.target.parentNode.className === 'user-wrapper'){
-      this.showElement(document.getElementsByTagName('form')[0]);
+      this.changeFormState('block');
       this.renderUserInfo(e);
-      this.showElement(document.getElementById('delete'))
     }
   }
   renderUserInfo(e) {
@@ -109,7 +109,6 @@ class App extends Component{
     this.setState({
       activeUser: user
     })
-    this.fillForm(user);
   }
   getUserId(e) {
     let userWrapper = e.target.closest('.user-wrapper');
@@ -117,12 +116,6 @@ class App extends Component{
   }
   findUser(userId) {
     return this.state.contacts.find((contact) => contact.id == userId);
-  }
-  fillForm(user) {
-    let inputName = document.getElementById('name');
-    let inputSurname = document.getElementById('surname');
-    inputName.value = user.name;
-    inputSurname.value = user.surname;
   }
   render() {
     return (
@@ -135,7 +128,9 @@ class App extends Component{
             onUserClick={this.onUserClick}/>
           <ContactsForm 
             onSaveBttnClick={this.onSaveBttnClick}
-            onDeleteBttnClick={this.onDeleteBttnClick}/>
+            onDeleteBttnClick={this.onDeleteBttnClick}
+            contact={this.state.activeUser}
+            formDisplay={this.state.formDisplay}/>
         </div>
       </div>
     )
