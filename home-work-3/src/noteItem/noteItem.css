@@ -1,0 +1,26 @@
+.note-wrapper li {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(70, 66, 66);
+    padding: 0px 10px;
+    max-width: 200px;
+    margin: 10px;
+    justify-content: space-between;
+}
+.note-wrapper li input[type='button']{
+    height: 30px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin: 5px 0px;
+}
+.note-wrapper li input[type="text"] {
+    height: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.note-wrapper li textarea{
+    min-height: 150px;
+    font-size: 15px;
+}
