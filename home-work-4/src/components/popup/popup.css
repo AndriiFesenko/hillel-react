@@ -1,0 +1,48 @@
+.todo-wrapper {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: rgba(236, 240, 2, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.todo-wrapper .todo-popup {
+    background-color: silver;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+}
+.todo-wrapper .todo-popup h2 {
+    margin: 0px;
+}
+.todo-wrapper .todo-popup input {
+    margin: 20px 0px;
+    font-size: 20px;
+    color: black;
+}
+.todo-wrapper .todo-popup .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.todo-wrapper .todo-popup button {
+    width: 30%;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid;
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+}
+.todo-wrapper .todo-popup button:hover {
+    cursor: pointer;
+    background: rgb(53, 167, 110); 
+}

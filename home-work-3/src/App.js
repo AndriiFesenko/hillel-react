@@ -36,14 +36,14 @@ class App extends React.Component{
     return task;
   }
 
-  onSave = (e, data) => {
-    this.setContext(e, data);
+  onSave = (e, data, currentTaskId) => {
+    this.setContext(e, data, currentTaskId);
     this.setState({
       tasks: [...this.state.tasks]
     })
   }
-  setContext(e, data) {
-    let element = this.state.tasks.find((el) => el.id === e.target.closest('li').id);
+  setContext(e, data, currentTaskId) {
+    let element = this.state.tasks.find((el) => el.id === currentTaskId);
     element.heading = data.heading;
     element.body = data.body;
     this.sendDataToLocalStorage(element)
@@ -71,7 +71,7 @@ class App extends React.Component{
         </div>
         <div className="task-list-body">
           <NoteList 
-            tasks={this.state.tasks} 
+            tasks={this.state.tasks}
             onSave={this.onSave}
             onDelete={this.onDelete}
           />

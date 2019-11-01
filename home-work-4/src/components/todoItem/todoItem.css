@@ -1,0 +1,33 @@
+.item-wrapper {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    width: 500px;
+    border-bottom: 1px solid black;
+}
+.item-wrapper span{
+    color: rgb(53, 167, 110); 
+    width: 20px;
+    font-weight: 700;
+}
+.item-wrapper li{
+    list-style: none;
+    margin: 0px 10px;
+    width: 80%;
+}
+.item-wrapper button{
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid;
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+    width: 50px;
+}
+.item-wrapper button:hover {
+    cursor: pointer;
+    background: rgb(53, 167, 110); 
+}

@@ -4,15 +4,12 @@ export class NoteItem extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // ...props.tasks
             heading: this.props.task.heading,
             body: this.props.task.body
         }
-        this.myRef = React.createRef();
     }
     onSaveBttnClick = (e) => {
-        // console.log(this.state)
-        this.props.onSave(e, this.state);
+        this.props.onSave(e, this.state, this.props.task.id);
     }
     onInputChange = (e) => {
         this.setState({
@@ -24,7 +21,7 @@ export class NoteItem extends Component {
     }
     render() {
         return (
-            <li id={this.props.task.id}>
+            <li>
                 <input type="button" value="delete" onClick={this.onDeleteBttnClick}/>
                 <input 
                     type="text" 
