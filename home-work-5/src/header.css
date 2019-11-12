@@ -1,0 +1,37 @@
+
+header {
+    width: 100%;
+    display: flex;
+    background-color: rgb(73, 86, 121);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 15px 0px;
+    box-sizing: border-box;
+}
+header span{
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+header ul{
+    position: absolute;
+    right: 20px;
+    display: flex;
+    margin: 0px;
+}
+header li{
+    list-style: none;
+    padding: 0px 5px;
+}
+
+header li a {
+    text-decoration: none;
+    color: white;
+}
+header li a:hover {
+    text-decoration: none;
+    color: rgb(232,95,76);
+    border-bottom: 1px solid rgb(232,95,76);
+}

@@ -1,0 +1,35 @@
+aside .albums-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+aside .albums-list ul {
+    width: 50%;
+    padding: 0px;
+}
+aside .albums-list ul li{
+    list-style: none;
+    font-size: 18px;
+    padding: 5px 5px;
+    border-bottom: 1px solid black;
+}
+aside .albums-list ul li:hover{
+    background-color: rgb(232,95,76);
+}
+aside .albums-list ul li:hover a{
+    color: white;
+}
+aside .albums-list ul li a{
+    text-decoration: none;
+    color: black;
+}
+aside .albums-list .album-photos {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.album-photos img{
+    width: 30%;
+    margin: 10px 0px;
+}
