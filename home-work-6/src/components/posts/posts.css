@@ -1,0 +1,23 @@
+
+
+.posts-list .item {
+    height: 50px;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    border-bottom: 2px solid rgb(48, 48, 160);
+}
+.posts-list .item a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: rgb(29, 24, 24);
+}
+.posts-list .item:hover{
+    background-color: lightgrey;
+}
+.posts-list .item:hover a {
+    color: rgb(48, 48, 160);
+}

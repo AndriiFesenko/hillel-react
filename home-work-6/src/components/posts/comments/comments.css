@@ -1,0 +1,20 @@
+
+
+.comments >div {
+    margin: 20px 0px;
+}
+.comments h2 {
+    font-size: 16px;
+}
+.comments #label {
+    font-size: 15px;
+    color: grey;
+}
+.comments .MuiTypography-root.MuiTypography-body2 {
+    padding: 0px 60px;
+    font-size: 18px;
+    text-align: center;
+}
+.comments .MuiCardContent-root {
+    border: 2px solid rgb(69, 69, 146);
+}

@@ -1,0 +1,37 @@
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    border: 2px solid lightgrey;
+    border-top: unset;
+    padding: 0px 50px 50px 50px;
+}
+.form-wrapper form {
+    width: 60%;
+}
+.form-wrapper form input{
+    border-bottom: 1px solid rgb(41, 40, 40) !important;
+}
+.form-wrapper .errors-field {
+    color: red;
+    font-size: 12px;
+}
+.form-wrapper form textarea{
+    margin-top: 50px;
+    height: 100px;
+    border: 1px solid rgb(41, 40, 40);
+    border-radius: 5px;
+}
+.form-wrapper form button{
+    position: relative;
+    margin: 10px 0px;
+}
+/* .form-wrapper .ui-button-doesnt-work {
+    position: absolute;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    border: unset;
+    cursor: pointer;
+} */

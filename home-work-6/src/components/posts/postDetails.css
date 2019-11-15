@@ -1,0 +1,13 @@
+
+.post-details {
+    padding: 80px 100px;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+}
+.post-details .body{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-bottom: 120px;
+    margin: 0px 30px 120px 30px;
+}

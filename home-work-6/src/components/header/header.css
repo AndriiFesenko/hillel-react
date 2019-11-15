@@ -1,0 +1,12 @@
+.container { 
+    max-width: 1000px;
+    padding: 10px 0px;
+}
+header {
+    width: 100%;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: flex-end;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
