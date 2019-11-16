@@ -6,7 +6,7 @@
 .comments h2 {
     font-size: 16px;
 }
-.comments #label {
+.comments .label {
     font-size: 15px;
     color: grey;
 }

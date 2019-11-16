@@ -29,10 +29,10 @@ export default function CommentsListItem({comment}) {
         <Card className={classes.card}>
             <CardContent>
                 <Typography variant="h5" component="h2">
-                    <i id="label">{`name:`}</i> {comment.name}
+                    <i className="label">{`name:`}</i> {comment.name}
                 </Typography>
                 <Typography className={classes.pos} color="textSecondary">
-                    <i id="label">{`email:`}</i> {comment.email}
+                    <i className="label">{`email:`}</i> {comment.email}
                 </Typography>
                 <Typography variant="body2" component="p">
                         {comment.body}
