@@ -1,0 +1,25 @@
+.form-wrapper {
+    width: 60%;
+}
+.form-wrapper form {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 0px;
+}
+.form-wrapper form button{
+    border: 2px solid lightgreen;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0);
+    padding: 5px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    min-width: 95px;
+}
+.form-wrapper form button:hover{
+    cursor: pointer;
+    background-color: lightgreen;
+}
+.form-wrapper form input{
+    width: 60%;
+    padding: 5px 10px;
+}
